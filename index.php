@@ -1,5 +1,6 @@
 <?php
 
+
 class A {
     public static function foo() {
         static::who();
@@ -27,4 +28,4 @@ class C extends B {
     }
 }
 
-C::test(); // A C C
+C::test();

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1, minimum-scale=1, user-scalable=no "/>
+    <title>BootStrap</title>
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap/css/bootstrap.css">
+    <script src="/bootstrap/bootstrap/js/jQuery.js"></script>
+    <script src="/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+       .test {
+           height: 300px;
+           background: red;
+       }
+    </style>
+</head>
+
+<body>
+
+<button class="btn btn-default">
+    <span class="glyphicon glyphicon-star">这是一个按钮</span>
+</button>
+
+<h1>下拉菜单</h1>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">这是一个按钮 <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+</div>
+
+<h1>控件组</h1>
+
+<div class="input-group">
+    <span class="input-group-addon">￥</span>
+    <input type="text" class="form-control">
+</div>
+
+<h1>导航</h1>
+<ul class="nav nav-tabs">
+    <li><a href="#">1111</a></li>
+    <li><a href="#">2222</a></li>
+    <li><a href="#">3333</a></li>
+    <li><a href="#">4444</a></li>
+</ul>
+
+<ul class="nav nav-pills">
+    <li><a href="#">1111</a></li>
+    <li><a href="#">2222</a></li>
+    <li><a href="#">3333</a></li>
+    <li><a href="#">4444</a></li>
+</ul>
+
+<ul class="nav nav-pills nav-stacked">
+    <li><a href="#">1111</a></li>
+    <li><a href="#">2222</a></li>
+    <li><a href="#">3333</a></li>
+    <li><a href="#">4444</a></li>
+</ul>
+
+<h1>分页</h1>
+<nav>
+    <ul class="pager">
+        <li class="previous"><a href="">向左</a></li>
+        <li class="next"><a href="">向右</a></li>
+    </ul>
+    <ul class="pagination pagination-lg">
+        <li class="active"><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+    </ul>
+</nav>
+
+<h1>进度条</h1>
+<div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: 60%;">
+        60%
+    </div>
+</div>
+
+<h1>列表</h1>
+<ul class="list-group">
+    <li class="list-group-item disabled">这是一个列表 <span class="badge">13</span></li>
+    <li class="list-group-item">这是一个列表 <span class="badge">13</span></li>
+    <li class="list-group-item">这是一个列表 <span class="badge">13</span></li>
+    <li class="list-group-item list-group-item-info">这是一个列表 <span class="badge">13</span></li>
+</ul>
+
+<h1>面板</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        弹出层!
+    </div>
+    <div class="panel-body">
+        这是面板的具体内容
+    </div>
+    <div class="panel-footer">
+        脚注信息
+    </div>
+</div>
+<br/>
+<br/>
+
+<button data-target="#myModal" data-toggle="modal">
+    按钮
+</button>
+<div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&items;</span>
+                        <span class="sr-only">关闭弹窗</span>
+                        <h4 class="modal-title" id="myModalLabel">标题</h4>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    墨客我
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<button class="btn btn-danger" data-toggle="modal" data-target="#danger">这是测试按钮</button>
+<div id="danger">
+    这是一个内容
+</div>
+
+</body>
+</html>

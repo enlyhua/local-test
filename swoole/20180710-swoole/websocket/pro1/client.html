@@ -1,0 +1,33 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+<script>
+    var wsServer = 'ws://127.0.0.1:123456';
+    var websocket = new WebSocket(wsServer);
+
+    websocket.onopen = function(evt) {
+        console.log('Connect to WebSocket');
+//        settable(evt.data);
+        websocket.send('hello');
+    };
+
+    websocket.onclose = function(evt) {
+        console.log('close');
+    };
+
+    websocket.onmessage = function(evt) {
+        console.log('Receive from Server' + evt.data);
+    };
+
+    websocket.onerror = function(evt, e) {
+        console.log('Error : '.evt.data);
+    };
+
+</script>
+
+</body>
+</html>

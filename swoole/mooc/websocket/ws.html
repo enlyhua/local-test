@@ -1,0 +1,33 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+<h1>websocket</h1>
+
+<script>
+    var wsUrl = 'ws://localhost:9501';
+    var websocket = new WebSocket(wsUrl);
+
+    websocket.onopen = function(evt) {
+            websocket.send('send data aaaaabbbbbcccc');
+        console.log('connect swoole success');
+    }
+
+    websocket.onmessage = function(evt) {
+        console.log('ws-server-return-data : ' + evt.data);
+    }
+
+    websocket.onclose = function(evt) {
+        console.log('close');
+    }
+
+    websocket.onerror = function(evt, e) {
+        console.log('error : ' + e.data)
+    }
+</script>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
 
 class Kafka
 {
-    public $broker_list = "106.15.74.99";
+    public $broker_list = "47.93.76.136";
     public $topic = "topic";
     public $partition = 0;
     public $logFile = "/tmp/kafka.log";

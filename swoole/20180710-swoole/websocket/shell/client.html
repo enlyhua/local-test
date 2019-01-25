@@ -1,0 +1,38 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+<script>
+    var wsServer = 'ws://127.0.0.1:123456';
+    var websocket = new WebSocket(wsServer);
+
+    websocket.onopen = function(evt) {
+        console.log('Connect to WebSocket');
+//        settable(evt.data);
+        websocket.send('{"cmd":"ls","is_block":0}');
+        websocket.send('{"cmd":"gdb","is_block":1}');
+        websocket.send('{"cmd":"info","is_block":1}');
+        websocket.send('{"cmd":"quit","is_block":1}');
+        websocket.send('{"cmd":"exit","is_block":1}');
+        //可以执行 php 脚本, 或者 浏览器 shell 终端，比如阿里云
+    };
+
+    websocket.onclose = function(evt) {
+        console.log('close');
+    };
+
+    websocket.onmessage = function(evt) {
+        console.log('Receive from Server' + evt.data);
+    };
+
+    websocket.onerror = function(evt, e) {
+        console.log('Error : '.evt.data);
+    };
+
+</script>
+
+</body>
+</html>
