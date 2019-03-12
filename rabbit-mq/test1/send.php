@@ -4,6 +4,7 @@
  * User: WeiDaoDao
  * Date: 2019/1/16
  * Time: 6:15 PM
+ *  https://segmentfault.com/a/1190000011825148
  */
 
 require_once __DIR__ . '/../../vendor/autoload.php';

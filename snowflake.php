@@ -27,7 +27,6 @@
         */
         $base = decbin(self::max41bit + $time);
 
-
         /*
         * Configured machine id - 10 bits - up to 1024 machines
         */

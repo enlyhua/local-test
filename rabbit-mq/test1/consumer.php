@@ -7,13 +7,12 @@
  * https://segmentfault.com/a/1190000011825148
  */
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
 //1.连接到rabbitmq
 $connection = new AMQPStreamConnection('118.25.49.26', 5672, 'test', '123456');
-
 
 //2.获取信道
 $channel = $connection->channel();
@@ -33,7 +32,7 @@ $callback = function($msg) {
     echo " 回调 --- [x] Received ", $msg->body, "\n";
 };
 
-//当调用basic_consume，我们的代码会阻塞。
+//当调用basic_consume，我们的代码会阻塞,将信道置为接收模式
 $result = $channel->basic_consume('hello', '', false, true, false, false, $callback);
 
 while(count($channel->callbacks)) {
