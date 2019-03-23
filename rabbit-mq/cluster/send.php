@@ -49,7 +49,7 @@ $channel->queue_declare($queue_name,false,true,false,false,false,$tale);
 $channel->queue_bind($queue_name, $exchange_name, $routing_key);
 
 //过期时间
-$ttl = 30 * 1000;
+$ttl = 10 * 1000;
 $data = '设置 30s 过期 ..' .PHP_EOL;
 $msg = new AMQPMessage($data,
     [
