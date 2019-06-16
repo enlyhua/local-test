@@ -4,6 +4,9 @@
  * User: WeiDaoDao
  * Date: 2019/3/23
  * Time: 2:38 PM
+ * https://blog.csdn.net/qq_24074585/article/details/82828413
+ * https://blog.csdn.net/HobHunter/article/details/78524922
+ * https://www.jianshu.com/p/576dbf44b2ae
  */
 
 require_once __DIR__ . '/../vendor/autoload.php';

@@ -1,17 +1,36 @@
 <?php
-class A {
-    public static function who() {
-        echo __CLASS__;
-    }
-    public static function test() {
-        self::who();
+
+class mysql
+{
+    public function connect($db)
+    {
+        echo '连接到数据库 db';
     }
 }
 
-class B extends A {
-    public static function who() {
-        echo __CLASS__;
+class sqlproxy
+{
+    private $target;
+
+    public function __construct($tar)
+    {
+        $this->target[] = new $tar();
+    }
+
+    public function __call($name, $arguments)
+    {
+        foreach ($this->target as $obj) {
+            $r = new ReflectionClass($obj);
+            if ($method = $r->getMethod($name)) {
+                if ($method->isPublic() && !$method->isAbstract()) {
+                    echo '方法前拦截记录';
+                    $method->invoke($obj, $args);
+                    echo '方法后拦截';
+                }
+            }
+        }
     }
 }
 
-B::test();
+$obj = new sqlproxy('mysql');
+$obj->connect('member');

@@ -50,7 +50,7 @@ class BaseProcess1
     }
 }
 
-$baseProcess = new BaseProcess();
+$baseProcess = new BaseProcess1();
 
 //监听子进程退出信号
 swoole_process::signal(SIGCHLD, function($sig) {

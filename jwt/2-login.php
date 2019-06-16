@@ -36,15 +36,19 @@ $payload = [
     "iat"=> time(),          // issued At签发时间
     "uid"=> $name,//以下是用户id等信息，不要放敏感信息和太多信息，一般放用户id，和用户名
     "username"=> $password,
+    'mobile' => '13122315219',
+    'app' => 'xyf',
 ];
 
 $headerString  = base64_encode(json_encode($header));
 $payloadString = base64_encode(json_encode($payload));
 $encodedString = $headerString . '.' . $payloadString;
+
+
 $secret  = 'localhost';
+
 $signature = hash_hmac('sha256', $encodedString, $secret, false);
 $token = $encodedString . '.' . $signature ;
-
-var_dump($token);
+echo strlen($token);
 
 setcookie('x-access-token', $token,time() + 7200);//将生成的token设置到cookie里

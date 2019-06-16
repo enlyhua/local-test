@@ -39,6 +39,7 @@ class Server
     public function onReceive(swoole_server $serv, $fd, $from_id, $data)
     {
         echo 'get message from client '.$fd.PHP_EOL;
+        echo 'data : '. $data . PHP_EOL;
 
         foreach ($serv->connections as $connection) {
             if ($fd != $connection) {

@@ -1,19 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: weijianhua
- * Date: 18/7/10
- * Time: 下午5:09
- */
 
-$server = new swoole_server('127.0.0.1', 9501);
+use Swoole\Redis\Server;
 
-$server->on('Start', function($server) {
-    echo '1. Start'.PHP_EOL;
+$server = new Server('127.0.0.1', 9501);
+
+$server->setHandler('Set', function($fd, $data) use ($server) {
+    $server->array($data[0], $data[1]);
+    return $server::format(Server::INT, 1);
 });
 
-$server->on('WorkerStart', function($server, $workerID) {
-    echo '2.WorerStart' . PHP_EOL;
+$server->setHandler('Get', function ($fd, $data) use ($server) {
+    $db->query($sql, function($db, $result) use ($fd) {
+        $server->send($fd, Server::format(Server::LIST, $result));
+    });
 });
-
-$server->on();
